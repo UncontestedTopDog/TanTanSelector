@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.administrator.tantanselector"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile lib_support_v4
+    compile lib_recyclerview
+    compile lib_support_annotations
+    compile lib_appcompat_v7
+    compile lib_glide
+    compile lib_rxjava
+    compile lib_rxandroid
+    compile lib_rxlifecycle
+    compile lib_rxlifecycle_components
+    compile lib_rxbinding
+    compile lib_okhttp
+    compile lib_retrofit
+    compile lib_retrofit_rxjava
+    compile lib_retrofit_gson
+    compile lib_gson
+}
