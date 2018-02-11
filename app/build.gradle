@@ -34,4 +34,5 @@ dependencies {
     compile lib_retrofit_rxjava
     compile lib_retrofit_gson
     compile lib_gson
+    compile lib_cardview
 }

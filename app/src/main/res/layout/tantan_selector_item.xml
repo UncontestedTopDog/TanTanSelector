@@ -1,64 +1,110 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/l1"
-    android:padding="10dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="440dp"
-    android:layout_centerHorizontal="true">
+    android:layout_height="425dp"
+    android:layout_alignParentTop="true">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <com.example.administrator.tantanselector.RoundImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="345"
-            android:scaleType="fitXY"
-            android:src="@drawable/one" />
+        android:layout_margin="9.17dp"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="95"
-            android:background="@drawable/item_bg"
-            android:padding="5dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <com.example.administrator.tantanselector.RoundImageView
+                android:id="@+id/avatar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="341.5"
+                android:scaleType="fitXY"
+                android:src="@drawable/one" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="83.5"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:padding="3dp"
+                    android:text="小妹妹"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/age_and_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/gender_male_label"
+                    android:padding="2dp"
+                    android:text="@string/male"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/constellation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_toRightOf="@id/age_and_gender"
+                    android:background="@drawable/constellation_leo_label"
+                    android:padding="2dp"
+                    android:text="狮子座"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/occupation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/age_and_gender"
+                    android:padding="3dp"
+                    android:text="IT互联网" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            android:alpha="0"
+            android:src="@drawable/img_like" />
 
-    <ImageView
-        android:id="@+id/left_label"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="20dp"
-        android:alpha="0"
-        android:src="@drawable/img_like" />
+        <ImageView
+            android:id="@+id/unlike"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:alpha="0"
+            android:src="@drawable/img_dislike" />
 
-    <ImageView
-        android:id="@+id/right_label"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentRight="true"
-        android:layout_margin="20dp"
-        android:alpha="0"
-        android:src="@drawable/img_dislike" />
-    
-    <ImageView
-        android:id="@+id/very_like"
-        android:src="@drawable/img_avatar_01"
-        android:scaleType="fitXY"
-        android:alpha="0"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="80dp" />
+        <ImageView
+            android:id="@+id/very_like"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:alpha="0"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_avatar_01" />
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

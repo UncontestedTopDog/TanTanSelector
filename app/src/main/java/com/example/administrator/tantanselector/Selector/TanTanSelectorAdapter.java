@@ -41,14 +41,14 @@ public class TanTanSelectorAdapter extends RecyclerView.Adapter {
     }
 
     public class CounterfeitMOMOSelectorViewHolder extends RecyclerView.ViewHolder {
-        public ImageView leftImage ;
-        public ImageView rightImage ;
-        public ImageView veryLike ;
+        public ImageView like ;
+        public ImageView unlike ;
+        public ImageView verylike ;
         public CounterfeitMOMOSelectorViewHolder(View itemView) {
             super(itemView);
-            leftImage  = itemView.findViewById(R.id.left_label);
-            rightImage  = itemView.findViewById(R.id.right_label);
-            veryLike  = itemView.findViewById(R.id.very_like);
+            like  = itemView.findViewById(R.id.like);
+            unlike  = itemView.findViewById(R.id.unlike);
+            verylike  = itemView.findViewById(R.id.very_like);
         }
     }
 }

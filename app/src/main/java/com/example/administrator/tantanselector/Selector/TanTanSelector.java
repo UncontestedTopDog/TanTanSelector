@@ -49,34 +49,34 @@ public class TanTanSelector extends RecyclerView {
 
                 switch (direction) {
                     case CardConfig.SWIPING_UP:
-                        myViewHolder.veryLike.setAlpha(Math.abs(ratio) - 1);
-                        myViewHolder.leftImage.setAlpha(0f);
-                        myViewHolder.rightImage.setAlpha(0f);
+                        myViewHolder.verylike.setAlpha(Math.abs(ratio) - 1);
+                        myViewHolder.like.setAlpha(0f);
+                        myViewHolder.unlike.setAlpha(0f);
                         break;
                     case CardConfig.SWIPING_DOWN:
-                        myViewHolder.veryLike.setAlpha(0f);
-                        myViewHolder.leftImage.setAlpha(0f);
-                        myViewHolder.rightImage.setAlpha(0f);
+                        myViewHolder.verylike.setAlpha(0f);
+                        myViewHolder.like.setAlpha(0f);
+                        myViewHolder.unlike.setAlpha(0f);
                         break;
                     case CardConfig.SWIPING_LEFT:
-                        myViewHolder.leftImage.setAlpha(Math.abs(ratio));
-                        myViewHolder.veryLike.setAlpha(0f);
-                        myViewHolder.rightImage.setAlpha(0f);
+                        myViewHolder.like.setAlpha(Math.abs(ratio));
+                        myViewHolder.verylike.setAlpha(0f);
+                        myViewHolder.unlike.setAlpha(0f);
                         break;
                     case CardConfig.SWIPING_RIGHT:
-                        myViewHolder.rightImage.setAlpha(Math.abs(ratio));
-                        myViewHolder.veryLike.setAlpha(0f);
-                        myViewHolder.leftImage.setAlpha(0f);
+                        myViewHolder.unlike.setAlpha(Math.abs(ratio));
+                        myViewHolder.verylike.setAlpha(0f);
+                        myViewHolder.like.setAlpha(0f);
                         break;
                     case CardConfig.SWIPING_NONE:
-                        myViewHolder.veryLike.setAlpha(0f);
-                        myViewHolder.leftImage.setAlpha(0f);
-                        myViewHolder.rightImage.setAlpha(0f);
+                        myViewHolder.verylike.setAlpha(0f);
+                        myViewHolder.like.setAlpha(0f);
+                        myViewHolder.unlike.setAlpha(0f);
                         break;
                     default:
-                        myViewHolder.veryLike.setAlpha(0f);
-                        myViewHolder.leftImage.setAlpha(0f);
-                        myViewHolder.rightImage.setAlpha(0f);
+                        myViewHolder.verylike.setAlpha(0f);
+                        myViewHolder.like.setAlpha(0f);
+                        myViewHolder.unlike.setAlpha(0f);
                         break;
 
                 }
@@ -86,9 +86,9 @@ public class TanTanSelector extends RecyclerView {
             public void onSwiped(RecyclerView.ViewHolder viewHolder, Integer integer, int direction) {
                 TanTanSelectorAdapter.CounterfeitMOMOSelectorViewHolder myViewHolder = (TanTanSelectorAdapter.CounterfeitMOMOSelectorViewHolder) viewHolder;
                 viewHolder.itemView.setAlpha(1f);
-                myViewHolder.veryLike.setAlpha(0f);
-                myViewHolder.leftImage.setAlpha(0f);
-                myViewHolder.rightImage.setAlpha(0f);
+                myViewHolder.verylike.setAlpha(0f);
+                myViewHolder.like.setAlpha(0f);
+                myViewHolder.unlike.setAlpha(0f);
                 switch (direction) {
                     case CardConfig.SWIPED_UP:
                         Toast.makeText(context, "swiped UP", Toast.LENGTH_SHORT).show();

@@ -16,8 +16,11 @@ import com.example.administrator.tantanselector.R;
 
 public class TanTanSelectorItem extends RelativeLayout {
 
-    private ImageView imageView ;
-    private TextView textView ;
+    private ImageView avatar ;
+    private TextView name ;
+    private TextView ageAndGemder ;
+    private TextView constellation ;
+    private TextView occupation ;
 
     public TanTanSelectorItem(Context context) {
         super(context);
@@ -36,15 +39,47 @@ public class TanTanSelectorItem extends RelativeLayout {
 
     private void init(){
         inflate(getContext(), R.layout.tantan_selector_item,this);
-        imageView = findViewById(R.id.image);
-        textView = findViewById(R.id.text);
+        avatar = findViewById(R.id.avatar);
+        name = findViewById(R.id.name);
+        ageAndGemder = findViewById(R.id.age_and_gender);
+        constellation = findViewById(R.id.constellation);
+        occupation = findViewById(R.id.occupation);
+
+
     }
 
     public void bindData(Data data){
         Glide.with(getContext())
-                .load(data.getUrl())
+                .load(data.getAvatar())
                 .placeholder(R.drawable.img_avatar_01)
-                .into(imageView);
-        textView.setText(data.getName());
+                .into(avatar);
+        name.setText(data.getName());
+        ageAndGemder.setText(data.getGender().equals(getResources().getString(R.string.female))?getResources().getString(R.string.female)+data.getage():getResources().getString(R.string.male)+data.getage());
+        if (data.getConstellation() == getResources().getString(R.string.aquarius))
+            constellation.setBackgroundResource(R.drawable.constellation_aquarius_label);
+        else if (data.getConstellation() == getResources().getString(R.string.aries))
+            constellation.setBackgroundResource(R.drawable.constellation_aries_label);
+        else if (data.getConstellation() == getResources().getString(R.string.cancer))
+            constellation.setBackgroundResource(R.drawable.constellation_cancer_label);
+        else if (data.getConstellation() == getResources().getString(R.string.capricorn))
+            constellation.setBackgroundResource(R.drawable.constellation_capricorn_label);
+        else if (data.getConstellation() == getResources().getString(R.string.gemini))
+            constellation.setBackgroundResource(R.drawable.constellation_gemini_label);
+        else if (data.getConstellation() == getResources().getString(R.string.leo))
+            constellation.setBackgroundResource(R.drawable.constellation_leo_label);
+        else if (data.getConstellation() == getResources().getString(R.string.libra))
+            constellation.setBackgroundResource(R.drawable.constellation_libra_label);
+        else if (data.getConstellation() == getResources().getString(R.string.pisces))
+            constellation.setBackgroundResource(R.drawable.constellation_pisces_label);
+        else if (data.getConstellation() == getResources().getString(R.string.sagittarius))
+            constellation.setBackgroundResource(R.drawable.constellation_sagittarius_label);
+        else if (data.getConstellation() == getResources().getString(R.string.scorpio))
+            constellation.setBackgroundResource(R.drawable.constellation_scorpio_label);
+        else if (data.getConstellation() == getResources().getString(R.string.taurus))
+            constellation.setBackgroundResource(R.drawable.constellation_taurus_label);
+        else if (data.getConstellation() == getResources().getString(R.string.virgo))
+            constellation.setBackgroundResource(R.drawable.constellation_virgo_label);
+        constellation.setText(data.getConstellation());
+        occupation.setText(data.getOccupation());
     }
 }
